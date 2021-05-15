@@ -1,2 +1,2 @@
 # Frost-Hack-Report-Bot
-Reporting system for FROSTHACK
+Reporting system for FROSTHACK Discord Server
