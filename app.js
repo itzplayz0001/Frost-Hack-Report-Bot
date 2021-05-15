@@ -99,12 +99,13 @@ client.on('message', message => {
                 message.channel.send(thanks)
                 //message.author.send(dm)
                 logger.send(viewer)
+                
+                // COOLDOWN FUNCTION
+                cooldownSet.add(message.author.id);
+                setTimeout(() => {
+                    cooldownSet.delete(message.author.id)
+                }, 10000);
             }
-            // COOLDOWN FUNCTION
-            cooldownSet.add(message.author.id);
-            setTimeout(() => {
-                cooldownSet.delete(message.author.id)
-            }, 10000);
         }
     }
 });
