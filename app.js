@@ -19,7 +19,7 @@ client.on('message', message => {
         if (cooldownSet.has(message.author.id)) {
             let cooldownWarn = new Discord.MessageEmbed()
             .setColor('#eb3455')
-            .setTitle('You cannot use this command now! You can report again after 2 hours!')
+            .setTitle('You cannot use this command now! You can report again after 3 hours!')
             .setFooter('https://github.com/itzplayz0001')
             .setTimestamp()
             message.reply(cooldownWarn)
@@ -96,14 +96,14 @@ client.on('message', message => {
             } else {
                 const logger = client.channels.cache.find(channel => channel.id === channelId);
                 message.channel.send(thanks)
-                //message.author.send(dm)
+                message.author.send(dm)
                 logger.send(viewer)
                 
                 // COOLDOWN FUNCTION
                 cooldownSet.add(message.author.id);
                 setTimeout(() => {
                     cooldownSet.delete(message.author.id)
-                }, 10000);
+                }, 10800000);
             }
         }
     }
