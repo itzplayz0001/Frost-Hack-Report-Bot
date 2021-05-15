@@ -83,13 +83,12 @@ client.on('message', message => {
             .setFooter('https://github.com/itzplayz0001')
             .setTimestamp()
     
-            let channelId = "842807525749020972"
+            let channelId = "842807525749030972"
             if (message.guild.channels.cache.get(channelId) === undefined) {
                 let errEmbed = new Discord.MessageEmbed()
                 .setColor('#eb3455')
                 .setTitle('No channel found!')
                 .setDescription('Please add a channel ID in the config.json')
-                .setDescription('Please')
                 .setFooter('https://github.com/itzplayz0001')
                 .setTimestamp()
                 message.channel.send(errEmbed)
